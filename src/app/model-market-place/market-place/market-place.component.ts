@@ -253,8 +253,6 @@ export class MarketPlaceComponent implements OnInit {
         console.log(this.non_trainable_model[i])
       }
     }
-    console.log(" this.nonTrainableCheckoutData", this.nonTrainableCheckoutData)
-
     // checkcount status 
     this.checkedCount = this.nonTrainableCheckoutData.length;
 
@@ -263,8 +261,6 @@ export class MarketPlaceComponent implements OnInit {
   nonTrainableModelCheckout() {
     // removed _id from checkedModelData array
     let checkoutNonTrainableModelList = this.nonTrainableCheckoutData.map(({ _id, ...rest }) => rest)
-    console.log("checkoutTrainableModelList", checkoutNonTrainableModelList);
-
     // api integration
     this.modelDataService.selectedModels(checkoutNonTrainableModelList).subscribe(
       (successResponse) => {

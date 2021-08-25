@@ -69,6 +69,10 @@ export class ModelDataService {
     const url: string = this.API_URL + '/api/modeldetails?original_model_name=' + originalModelName;
     return this.http.get(url);
   }
+  getModelDetail(trainingTracker_id: any): Observable<any> {
+    const url: string = this.API_URL + '/api/traintracker?_id=' + trainingTracker_id;
+    return this.http.get(url);
+  }
 
   //Update the Selected Model List
   
